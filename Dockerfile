@@ -21,9 +21,10 @@ COPY --chown=weblogic weblogic-batch ${ORACLE_HOME}/
 RUN mkdir -p ${ORACLE_HOME}/libs && \
     mkdir -p ${ORACLE_HOME}/.ssh && \
     cd ${ORACLE_HOME}/libs && \
-    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar -o log4j-api.jar && \
-    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-core/2.21.1/log4j-core-2.21.1.jar -o log4j-core.jar && \
-    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-1.2-api/2.21.1/log4j-1.2-api-2.21.1.jar -o log4j-1.2-api.jar && \
+    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-api/2.25.3/log4j-api-2.25.3.jar -o log4j-api.jar && \
+    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-core/2.25.3/log4j-core-2.25.3.jar -o log4j-core.jar && \
+    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-1.2-api/2.25.3/log4j-1.2-api-2.25.3.jar -o log4j-1.2-api.jar && \
+    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-jcl/2.25.3/log4j-jcl-2.25.3.jar -o log4j-jcl.jar && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/springframework/spring/2.0.7/spring-2.0.7.jar -o spring.jar && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar -o commons-logging.jar && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/com/thoughtworks/xstream/xstream/1.4.3/xstream-1.4.3.jar -o xstream.jar && \
@@ -70,9 +71,6 @@ RUN mkdir -p ${ORACLE_HOME}/libs && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/springframework/spring-aop/4.3.30.RELEASE/spring-aop-4.3.30.RELEASE.jar -o spring-aop-4.3.30.RELEASE.jar && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/springframework/spring-expression/4.3.30.RELEASE/spring-expression-4.3.30.RELEASE.jar -o spring-expression-4.3.30.RELEASE.jar && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/javax/jms/javax.jms-api/2.0.1/javax.jms-api-2.0.1.jar -o javax.jms-api-2.0.1.jar && \
-    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-api/2.25.3/log4j-api-2.25.3.jar -o log4j-api-2.25.3.jar && \
-    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-core/2.25.3/log4j-core-2.25.3.jar -o log4j-core-2.25.3.jar && \
-    curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/apache/logging/log4j/log4j-jcl/2.25.3/log4j-jcl-2.25.3.jar -o log4j-jcl-2.25.3.jar && \
     curl -L -u "${ARTIFACTORY_USERNAME}:${ARTIFACTORY_PASSWORD}" ${ARTIFACTORY_BASE_URL}/org/springframework/spring-tx/4.3.30.RELEASE/spring-tx-4.3.30.RELEASE.jar -o spring-tx-4.3.30.RELEASE.jar && \
     chmod -R 750 ${ORACLE_HOME}/*
 
