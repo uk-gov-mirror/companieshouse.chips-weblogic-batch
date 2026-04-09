@@ -3,6 +3,7 @@ running-servers/
 # Eclipse files
 .project
 .settings
+.idea
 
 # Block variants of docker-compose file throughout project
 docker-compose*.yml
