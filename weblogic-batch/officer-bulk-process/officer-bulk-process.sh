@@ -38,8 +38,7 @@ HOME=${KEEP_HOME}
 # create properties file and substitutes values
 envsubst <officer-poller.properties.template >officer-poller.properties
 
-CLASSPATH=$CLASSPATH:.:/apps/oracle/libs/commons-logging.jar:/apps/oracle/libs/xstream.jar:/apps/oracle/libs/cglib-nodep.jar:/apps/oracle/libs/joda-time.jar:/apps/oracle/libs/commons-lang.jar:/apps/oracle/libs/ojdbc11.jar:/apps/oracle/libs/wlthint3client.jar:/apps/oracle/libs/spring.jar:/apps/oracle/libs/log4j-core.jar:/apps/oracle/libs/log4j-api.jar:/apps/oracle/libs/log4j-1.2-api.jar:/apps/oracle/libs/com.bea.core.datasource6.jar:/apps/oracle/libs/com.bea.core.resourcepool.jar:/apps/oracle/libs/com.oracle.weblogic.jdbc.jar:/apps/oracle/officer-bulk-process/officer-bulk-process.jar
-JAVA_ARGS="--add-opens=java.desktop/java.awt.font=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED"
+CLASSPATH=$CLASSPATH:.:/apps/oracle/libs/commons-logging.jar:/apps/oracle/libs/xstream.jar:/apps/oracle/libs/cglib-nodep.jar:/apps/oracle/libs/joda-time.jar:/apps/oracle/libs/ojdbc11.jar:/apps/oracle/libs/wlthint3client.jakarta.jar:/apps/oracle/libs/spring-core-7.jar:/apps/oracle/libs/spring-jms-7.jar:/apps/oracle/libs/spring-jdbc-7.jar:/apps/oracle/libs/spring-context-7.jar:/apps/oracle/libs/spring-beans-7.jar:/apps/oracle/libs/spring-tx-7.jar:/apps/oracle/libs/spring-aop-7.jar:/apps/oracle/libs/log4j-core.jar:/apps/oracle/libs/log4j-api.jar:/apps/oracle/libs/log4j-1.2-api.jar:/apps/oracle/libs/com.bea.core.datasource6.jar:/apps/oracle/libs/com.bea.core.resourcepool.jar:/apps/oracle/libs/com.oracle.weblogic.jdbc.jar:/apps/oracle/libs/micrometer-observation.jar:/apps/oracle/officer-bulk-process/officer-bulk-process.jar
 
 # Set up mail config for msmtp & load alerting functions
 envsubst <../.msmtprc.template >../.msmtprc
