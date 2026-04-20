@@ -20,5 +20,3 @@ compliance.trigger.pause=${COMPLIANCE_TRIGGER_PAUSE}
 compliance.trigger.eventlimit=${COMPLIANCE_TRIGGER_EVENTLIMIT}
 compliance.trigger.casesatonce=${COMPLIANCE_TRIGGER_CASESATONCE}
 
-#log4jConfig file location
-log4j.config=log4jconfig.xml
