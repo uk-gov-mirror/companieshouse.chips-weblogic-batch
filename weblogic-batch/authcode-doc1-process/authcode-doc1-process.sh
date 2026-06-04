@@ -36,11 +36,11 @@ if [[ "${INPUT_OUTPUT_FLAG}" == "OUTPUT" ]]; then
     shopt -s nullglob
     AUTHCODE_OUTPUT=( "${AFP_OUTPUT%/}"/*-AUTHCODE.dat.afp )
     case ${#AUTHCODE_OUTPUT[@]} in
-        0) email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: Move failed!" && exit 1
+        0) email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: No output AFP found!" && exit 1
            ;;
         1) mv -v -- "${AUTHCODE_OUTPUT[0]}" "${LETTER_OUTPUT_FILES_PATH}"
            ;;
-        *) email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: Move failed!" && exit 1
+        *) email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: Exception, possible multiple outputs!" && exit 1
            ;;
     esac
 fi
