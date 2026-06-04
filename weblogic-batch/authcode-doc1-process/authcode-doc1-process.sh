@@ -33,10 +33,14 @@ if [[ "${INPUT_OUTPUT_FLAG}" == "INPUT" ]]; then
 fi
 
 if [[ "${INPUT_OUTPUT_FLAG}" == "OUTPUT" ]]; then
-    if [[ -f "${AFP_OUTPUT%/}/*AUTHCODE.dat.afp" ]]; then
-        mv "${AFP_OUTPUT%/}/*AUTHCODE.dat.afp" ${LETTER_OUTPUT_FILES_PATH}
-    else
-        email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: Move failed!"
-        exit 1
-    fi
+    shopt -s nullglob
+    AUTHCODE_OUTPUT=( "${AFP_OUTPUT%/}"/*-AUTHCODE.dat.afp )
+    case ${#AUTHCODE_OUTPUT[@]} in
+        0) email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: Move failed!" && exit 1
+           ;;
+        1) mv -v -- "${AUTHCODE_OUTPUT[0]}" "${LETTER_OUTPUT_FILES_PATH}"
+           ;;
+        *) email_csi_xmatters_create_incident_f "${ENVIRONMENT_LABEL} - ${PROGNAME}" "AUTHCODE OUTPUT: Move failed!" && exit 1
+           ;;
+    esac
 fi
